@@ -54,4 +54,15 @@ router.post("/", function() {});
  */
 router.get('/test', function() {});
 
+/**
+ * @route GET /test/a
+ * @returns {ArrayMan.model} test
+ */
+
+
+ /**
+  * @typedef ArrayMan
+  * @property {number[]} numbers - A lot of integers - eg:[0,0,0]
+  * @property {string[]} strings - A lot of messages - eg:["a","b","c"]
+  */
 module.exports = router;
