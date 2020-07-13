@@ -55,14 +55,35 @@ router.post("/", function() {});
 router.get('/test', function() {});
 
 /**
- * @route GET /test/a
+ * @route GET /test/array
  * @returns {ArrayMan.model} test
  */
 
+ /**
+ * @route POST /test/union
+ * @returns {Cat|Dog} 200 - Cat or dog
+ */
 
  /**
   * @typedef ArrayMan
   * @property {number[]} numbers - A lot of integers - eg:[0,0,0]
   * @property {string[]} strings - A lot of messages - eg:["a","b","c"]
   */
+
+ /**
+  * @typedef Pet
+  * @property {string} name - Name - eg: Sys
+  * @property {string} objectType.required
+  */
+
+ /**
+  * @typedef {Pet} Dog
+  * @property {string} woof - M - eg: woof
+  */
+
+ /**
+  * @typedef {Pet} Cat
+  * @property {string} meow - M - eg: meow
+  */
+ 
 module.exports = router;
