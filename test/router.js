@@ -30,37 +30,32 @@ router.post("/", function() {});
 
 
 /**
- * @typedef Product
- * @property {integer} id
- * @property {string} name.required - Some description for product
- * @property {Array.<Point>} Point
+ * @route POST /test/array_input
+ * @param {ArrayMan.model} input.body.required
+ * @returns {string} 200 - response
  */
 
 /**
- * @typedef Point
- * @property {integer} x.required
- * @property {integer} y.required - Some description for point - eg: 1234
- * @property {Array.<Color>} Color
- */
-
-/**
- * @typedef Color
- * @property {string} blue
- */
-
-/**
- * @route GET /test/
- * @returns {Array.<Point>} Point - Some description for point
- */
-router.get('/test', function() {});
-
-/**
- * @route GET /test/array
- * @returns {ArrayMan.model} test
+ * @route GET /test/array_output
+ * @returns {ArrayMan.model} 200 - test
  */
 
  /**
- * @route POST /test/union
+ * @route POST /test/union_input
+ * @input_example input - Dog - eg: {"a":5,"b":6,"woof":"1"}
+ * @input_example input - Cat - eg: {"a":5,"b":6,"meow":"2"}
+ * @param {Cat|Dog} input.body.required
+ */
+
+ /**
+ * @route POST /test/union_output
+ * @output_example 200 - Cat - eg: {"a":1,"b":2}
+ * @output_example 200 - Dog - eg: {"a":3,"b":4}
+ * @returns {Cat|Dog} 200 - Cat or dog
+ */
+
+ /**
+ * @route POST /test/json_input
  * @returns {Cat|Dog} 200 - Cat or dog
  */
 
@@ -73,7 +68,7 @@ router.get('/test', function() {});
  /**
   * @typedef Pet
   * @property {string} name - Name - eg: Sys
-  * @property {string} objectType.required
+  * @property {string} objectType - Object type to differ class types
   */
 
  /**
