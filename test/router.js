@@ -55,11 +55,6 @@ router.post("/", function() {});
  */
 
  /**
- * @route POST /test/json_input
- * @returns {Cat|Dog} 200 - Cat or dog
- */
-
- /**
   * @typedef ArrayMan
   * @property {number[]} numbers - A lot of integers - eg:[0,0,0]
   * @property {string[]} strings - A lot of messages - eg:["a","b","c"]

@@ -1,4 +1,6 @@
-### Express Swagger Generator
+### Express OpenAPI Generator 
+
+This is a forked version supporting OpenAPI 3.0
 
 #### Installation
 
@@ -108,6 +110,41 @@ For model definitions:
  * @headers {string} 200.X-Expires-After - 	date in UTC when token expires
  * @security JWT
  */
+```
+
+Supporting input/output examples
+
+Supporting union types
+```
+ /**
+ * @route POST /test/union_input
+ * @input_example input - Dog - eg: {"a":5,"b":6,"woof":"1"}
+ * @input_example input - Cat - eg: {"a":5,"b":6,"meow":"2"}
+ * @param {Cat|Dog} input.body.required
+ */
+
+ /**
+ * @route POST /test/union_output
+ * @output_example 200 - Cat - eg: {"a":1,"b":2,"woof":"1"}
+ * @output_example 200 - Dog - eg: {"a":3,"b":4,"meow":"2"}
+ * @returns {Cat|Dog} 200 - Cat or dog
+ */
+
+ /**
+  * @typedef Pet
+  * @property {string} name - Name - eg: Sys
+  * @property {string} objectType - Object type to differ class types
+  */
+
+ /**
+  * @typedef {Pet} Dog
+  * @property {string} woof - M - eg: woof
+  */
+
+ /**
+  * @typedef {Pet} Cat
+  * @property {string} meow - M - eg: meow
+  */
 ```
 
 #### More
