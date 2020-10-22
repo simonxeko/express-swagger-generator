@@ -147,6 +147,13 @@ Supporting union types
   */
 ```
 
+Supporting intersection types
+```
+ /**
+ * @typedef {Pet&Dog} DogWithName
+ */
+```
+
 #### More
 
 This module is based on [express-swaggerize-ui](https://github.com/pgroot/express-swaggerize-ui) and [Doctrine-File](https://github.com/researchgate/doctrine-file)
